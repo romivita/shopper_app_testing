@@ -1,0 +1,12 @@
+#Dependencies directory
+node_modules
+
+# Flutter apps
+apps
+
+#Logs
+logs
+*.log
+
+#IDE
+.idea
