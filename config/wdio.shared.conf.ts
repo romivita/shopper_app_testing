@@ -10,36 +10,19 @@ export const config: Options.Testrunner = {
     },
   },
 
-  specs: ['../test/specs/login.spec.ts'],
+  specs: ['../../test/specs/**/*.ts'],
 
-  capabilities: [
-    {
-      maxInstances: 1,
-      'appium:automationName': 'Flutter',
-    },
-  ],
+  capabilities: [{
+    'appium:automationName': 'Flutter',
+  }],
 
   logLevel: 'debug',
-
-  bail: 0,
 
   waitforTimeout: 90000,
 
   connectionRetryTimeout: 120000,
 
   connectionRetryCount: 3,
-
-  services: [
-    [
-      'appium',
-      {
-        args: {
-          relaxedSecurity: true,
-          log: './logs/appium.log',
-        },
-      },
-    ],
-  ],
 
   framework: 'mocha',
 

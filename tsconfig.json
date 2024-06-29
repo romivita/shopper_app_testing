@@ -9,7 +9,8 @@
       "expect-webdriverio",
       "@wdio/mocha-framework",
       "@wdio/appium-service"
-    ]
+    ],
+    "allowImportingTsExtensions": true
   },
   "include": ["./config/**/*.ts", "./tests/**/*.ts"]
 }
