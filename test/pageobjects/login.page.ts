@@ -2,11 +2,11 @@ import { driver } from '@wdio/globals';
 import find from 'appium-flutter-finder';
 
 class LoginPage {
-  public get buttonEnter() {
+  get buttonEnter() {
     return find.byText('ENTER');
   }
 
-  public get txtUsername() {
+  get txtUsername() {
     return find.ancestor({
       of: find.byText('Username'),
       matching: find.byType('TextField'),
@@ -14,7 +14,7 @@ class LoginPage {
     });
   }
 
-  public get txtPassword() {
+  get txtPassword() {
     return find.ancestor({
       of: find.byText('Password'),
       matching: find.byType('TextField'),
@@ -22,7 +22,7 @@ class LoginPage {
     });
   }
 
-  public async login() {
+  async login() {
     await driver.execute('flutter:waitFor', this.txtUsername);
     await driver.elementClick(this.txtUsername);
     await driver.execute('flutter:enterText', 'Jeanne_Doe63@yahoo.com');
