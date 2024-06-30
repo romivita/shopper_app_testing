@@ -37,6 +37,17 @@ class CatalogPage {
 
     return await driver.execute('flutter:waitFor', checkItem);
   }
+
+  async goToCartPage() {
+    const cartIcon = find.descendant({
+      of: find.byType('_MyAppBar'),
+      matching: find.byType('Icon'),
+      firstMatchOnly: true,
+    });
+
+    await driver.elementClick(cartIcon);
+  }
+
 }
 
 export default new CatalogPage();
