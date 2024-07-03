@@ -11,7 +11,7 @@ env:
 
 jobs:
   check-pr:
-    runs-on: [ Linux, X64 ]
+    runs-on: ubuntu-latest
     outputs:
       files: ${{ steps.diff.outputs.CHANGED_FILES }}
     steps:
