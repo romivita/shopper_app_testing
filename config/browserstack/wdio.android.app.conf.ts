@@ -7,7 +7,6 @@ export const config = {
       {
         ...sharedConfig.capabilities[0],
         'appium:app': process.env.ANDROID_APP,
-        'appium:automationName': 'Flutter',
         'bstack:options': {
           platformName: 'android',
           platformVersion: '9.0',

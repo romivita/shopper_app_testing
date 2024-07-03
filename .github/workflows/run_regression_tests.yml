@@ -19,7 +19,7 @@ on:
 env:
   BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
   BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  ANDROID_APP_CUSTOM_ID: ${{ secrets.ANDROID_APP }}
+  ANDROID_APP: ${{ secrets.ANDROID_APP }}
   BUILD_NAME: 'Regression'
   BUILD_TAGS: ${{ inputs.selected_suite }}
 
