@@ -8,7 +8,7 @@ export const config = {
         ...sharedConfig.capabilities[0],
         'appium:app': process.env.ANDROID_APP,
         platformName: 'android',
-        automationName: 'Flutter',
+        'appium:automationName': 'Flutter',
         'bstack:options': {
           platformVersion: '9.0',
           deviceName: 'Samsung Galaxy S10e',
