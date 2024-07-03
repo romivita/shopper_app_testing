@@ -43,5 +43,4 @@ jobs:
         run: |
           chmod +x ./scripts/run_regression_tests_script.sh
           ./scripts/run_regression_tests_script.sh "${PLATFORM}" "${BUILD_TAGS}"
-
   

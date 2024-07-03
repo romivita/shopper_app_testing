@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 PLATFORM=$1
 BUILD_TAGS=$2
 
-if [ "${PLATFORM}" == "ios" ] || [ "${PLATFORM}" == "android" ]; then
+if [ "$PLATFORM" = "ios" ] || [ "$PLATFORM" = "android" ]; then
     if [ -n "$BUILD_TAGS" ]; then
         for SUITE in $BUILD_TAGS; do
             export BUILD_TAGS="$SUITE"
