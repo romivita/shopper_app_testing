@@ -21,10 +21,10 @@ npm install
 6. Abre los archivos `config/wdio.android.app.conf.ts` y `config/wdio.android.app.conf.ts` y configura las opciones de Appium según tus dispositivos y versiones.
 7. Ejecuta el siguiente comando para ejecutar las pruebas:
 ```
-npm run ios
+npm run ios:local
 ```
 ```
-npm run android
+npm run android:local
 ```
 ***Las pruebas se ejecutarán automáticamente y se generará un informe con los resultados.***
 
