@@ -12,7 +12,7 @@ export const config = {
       ],
     ],
 
-    specFileRetries: 2,
+    specFileRetries: 0,
 
     capabilities: [
       {
