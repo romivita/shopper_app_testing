@@ -6,10 +6,10 @@ export const config = {
     capabilities: [
       {
         ...sharedConfig.capabilities[0],
+        'platformName': 'ios',
+        'appium:deviceName': 'iPhone 11 Pro Max',
         'appium:app': process.env.IOS_APP,
         'bstack:options': {
-          deviceName: 'iPhone 11 Pro Max',
-          platformName: 'iOS',
           projectName: process.env.BUILD_NAME + ' iOS App',
           buildName: 'Suite: ' + process.env.BUILD_TAGS,
           idleTimeout: 180,

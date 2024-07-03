@@ -6,11 +6,11 @@ export const config = {
     capabilities: [
       {
         ...sharedConfig.capabilities[0],
+        'platformName': 'android',
+        'appium:platformVersion': '9.0',
+        'appium:deviceName': 'Samsung Galaxy S10e',
         'appium:app': process.env.ANDROID_APP,
         'bstack:options': {
-          deviceName: 'Samsung Galaxy S10e',
-          platformName: 'android',
-          platformVersion: '9.0',
           projectName: process.env.BUILD_NAME + ' Android App',
           buildName: 'Suite: ' + process.env.BUILD_TAGS,
           idleTimeout: 180,
