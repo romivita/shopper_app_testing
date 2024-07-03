@@ -6,7 +6,7 @@ export const config = {
   capabilities: [
     {
       ...sharedConfig.capabilities[0],
-      'appium:app': 'bs://cbfffcf944de868b7c94cd48f55b093b6dffe911',
+      'appium:app': process.env.ANDROID_APP,
       'bstack:options': {
         deviceName: 'Samsung Galaxy S10e',
         platformName: 'android',

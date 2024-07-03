@@ -5,16 +5,18 @@ import CartPage from '../pageobjects/cart.page.ts';
 
 describe('Catalog and Cart Interaction', () => {
   before(async () => {
-    await LoginPage.login();
+    await LoginPage.enter();
     expect(await CatalogPage.isCatalogDisplayed()).toBeTruthy();
   });
 
   it('should add items to cart and navigate to cart page', async () => {
-    await CatalogPage.addItemToCart('Sprint');
-    await CatalogPage.addItemToCart('Off-By-One');
+    const item = 'Sprint';
+    const itemPrice = 42;
+    await CatalogPage.addItemToCart(item);
 
     await CatalogPage.goToCartPage();
 
     expect(await CartPage.isCartDisplayed()).toBeTruthy();
+    expect(await CartPage.isTotalDisplayed(itemPrice)).toBeTruthy();
   });
 });

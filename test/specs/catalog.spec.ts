@@ -6,7 +6,7 @@ describe('Catalog Icon Display', () => {
   let selectedItem: string;
 
   before(async () => {
-    await LoginPage.login();
+    await LoginPage.enter();
     expect(await CatalogPage.isCatalogDisplayed()).toBeTruthy();
   });
 

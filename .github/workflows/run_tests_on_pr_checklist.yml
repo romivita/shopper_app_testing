@@ -1,0 +1,47 @@
+name: PR checklist
+
+on:
+  pull_request:
+
+env:
+  BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+  BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+  ANDROID_APP_CUSTOM_ID: ${{ secrets.ANDROID_APP }}
+  BUILD_NAME: 'PR check'
+
+jobs:
+  check-pr:
+    runs-on: [ Linux, X64 ]
+    outputs:
+      files: ${{ steps.diff.outputs.CHANGED_FILES }}
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+
+      - name: Install dependencies 📦
+        run: npm install
+
+      - name: Store changed files 🌳
+        id: diff
+        run: |
+          git --version
+          git status
+          git fetch
+          {
+            echo 'CHANGED_FILES<<EOF'
+            git diff --name-only --diff-filter=AMR origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- test/specs
+            echo EOF
+          } >> $GITHUB_OUTPUT
+
+  browserstack-android:
+    needs: [ check-pr ]
+    runs-on: [ Linux, X64 ]
+    env:
+      CHANGED_FILES: ${{ needs.check-pr.outputs.files }}
+    steps:
+      - name: Run tests on Android with BrowserStack
+        run: |
+          chmod +x ./scripts/run_pr_tests.sh
+          ./scripts/run_pr_tests.sh "${PLATFORM}" "${{ env.CHANGED_FILES }}"

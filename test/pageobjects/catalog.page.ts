@@ -2,12 +2,9 @@ import find from 'appium-flutter-finder';
 import { driver } from '@wdio/globals';
 
 class CatalogPage {
-  get myCatalog() {
-    return find.byType('MyCatalog');
-  }
-
   async isCatalogDisplayed() {
-    return driver.execute('flutter:waitFor', this.myCatalog);
+    const myCatalog = find.byType('MyCatalog');
+    return driver.execute('flutter:waitFor', myCatalog);
   }
 
   getItem(itemName: string) {

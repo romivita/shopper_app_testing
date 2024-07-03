@@ -29,6 +29,10 @@ class LoginPage {
     await driver.elementClick(this.txtPassword);
     await driver.execute('flutter:waitFor', this.txtPassword);
     await driver.execute('flutter:enterText', 'Test123!');
+    await this.enter();
+  }
+
+  async enter() {
     await driver.elementClick(this.buttonEnter);
   }
 }

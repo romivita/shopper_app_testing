@@ -6,7 +6,7 @@ export const config = {
   capabilities: [
     {
       ...sharedConfig.capabilities[0],
-      'appium:app': 'apps/ios/Runner.app',
+      'appium:app': process.env.IOS_APP,
       'bstack:options': {
         deviceName: 'iPhone 11 Pro Max',
         platformName: 'iOS',

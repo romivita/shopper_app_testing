@@ -12,6 +12,12 @@ export const config: Options.Testrunner = {
 
   specs: ['../../test/specs/**/*.ts'],
 
+  suites: {
+    login: ['../../test/specs/login.spec.ts'],
+    catalog: ['../../test/specs/catalog.spec.ts'],
+    cart: ['../../test/specs/cart.spec.ts'],
+  },
+
   capabilities: [{
     'appium:automationName': 'Flutter',
   }],
