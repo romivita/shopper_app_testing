@@ -9,6 +9,9 @@ export const config = {
     services: [
       [
         'browserstack',
+        {
+          buildIdentifier: '${DATE_TIME}',
+        },
       ],
     ],
 

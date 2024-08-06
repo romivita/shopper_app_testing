@@ -84,11 +84,7 @@ class CartPage {
    * @returns {Promise<boolean>} - Devuelve true si el Snackbar está visible, false en caso contrario.
    */
   async isSnackBarDisplayed(): Promise<boolean> {
-    const snackBarLocator = find.descendant({
-      of: find.byType('SnackBar'),
-      matching: find.byText('Buying not supported yet.'),
-    });
-    return isDisplayed(snackBarLocator);
+    return isDisplayed(find.byText('Buying not supported yet.'));
   }
 }
 
