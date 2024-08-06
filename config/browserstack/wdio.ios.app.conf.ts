@@ -9,7 +9,7 @@ export const config = {
         'appium:app': process.env.IOS_APP_CUSTOM_ID,
         'bstack:options': {
           platformName: 'ios',
-          platformVersion: '13.5',
+          platformVersion: '1[34]',
           deviceName: 'iPhone .*',
           projectName: process.env.BUILD_NAME + ' iOS App',
           buildName: 'Suite: ' + process.env.BUILD_TAGS,
