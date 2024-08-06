@@ -15,11 +15,13 @@ on:
         type: choice
         options:
           - android
+          - ios
 
 env:
   BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
   BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  ANDROID_APP: ${{ secrets.ANDROID_APP }}
+  ANDROID_APP_CUSTOM_ID: ${{ secrets.ANDROID_APP_CUSTOM_ID }}
+  IOS_APP_CUSTOM_ID: ${{ secrets.IOS_APP_CUSTOM_ID }}
   BUILD_NAME: 'Regression'
   BUILD_TAGS: ${{ inputs.selected_suite }}
 
