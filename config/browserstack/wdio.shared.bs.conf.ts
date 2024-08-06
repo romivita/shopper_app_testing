@@ -3,8 +3,8 @@ import { config as baseConfig } from '../wdio.shared.conf.ts';
 export const config = {
   ...baseConfig,
   ...{
-    user: process.env.BROWSERSTACK_USERNAME,
-    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.BS_USERNAME,
+    key: process.env.BS_ACCESS_KEY,
     hostname: 'hub.browserstack.com',
     services: [
       [

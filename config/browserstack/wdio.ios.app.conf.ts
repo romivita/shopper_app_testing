@@ -6,7 +6,7 @@ export const config = {
     capabilities: [
       {
         ...sharedConfig.capabilities[0],
-        'appium:app': process.env.IOS_APP,
+        'appium:app': process.env.IOS_APP_CUSTOM_ID,
         'bstack:options': {
           platformName: 'ios',
           platformVersion: '13.5',

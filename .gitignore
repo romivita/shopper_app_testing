@@ -1,5 +1,7 @@
 #Dependencies directory
 node_modules
+test/reports/allure-report
+test/reports/allure-results
 
 # Flutter apps
 apps/android

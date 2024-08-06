@@ -6,7 +6,7 @@ export const config = {
     capabilities: [
       {
         ...sharedConfig.capabilities[0],
-        'appium:app': process.env.ANDROID_APP,
+        'appium:app': process.env.ANDROID_APP_CUSTOM_ID,
         'bstack:options': {
           platformName: 'android',
           platformVersion: '9.0',

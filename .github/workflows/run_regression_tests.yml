@@ -18,10 +18,10 @@ on:
           - ios
 
 env:
-  BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-  BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-  ANDROID_APP_CUSTOM_ID: ${{ secrets.ANDROID_APP_CUSTOM_ID }}
-  IOS_APP_CUSTOM_ID: ${{ secrets.IOS_APP_CUSTOM_ID }}
+  BS_USERNAME: ${{ secrets.BS_USERNAME }}
+  BS_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
+  ANDROID_APP_CUSTOM_ID: 'ShopperAndroidApp'
+  IOS_APP_CUSTOM_ID: 'ShopperIOSApp'
   BUILD_NAME: 'Regression'
   BUILD_TAGS: ${{ inputs.selected_suite }}
 
@@ -43,6 +43,6 @@ jobs:
           PLATFORM: ${{ inputs.operating_system }}
         shell: bash
         run: |
-          chmod +x ./scripts/run_regression_tests_script.sh
-          ./scripts/run_regression_tests_script.sh "${PLATFORM}" "${BUILD_TAGS}"
+          chmod +x ./scripts/run_regression_tests.sh
+          ./scripts/run_regression_tests.sh "${PLATFORM}" "${BUILD_TAGS}"
   
