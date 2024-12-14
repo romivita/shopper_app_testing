@@ -17,5 +17,6 @@ export const config = {
         },
       },
     ],
+    maxInstances: 2,
   },
 };

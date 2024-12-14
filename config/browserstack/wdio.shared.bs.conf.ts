@@ -23,7 +23,5 @@ export const config = {
         'appium:appiumVersion': '2.4.1',
       },
     ],
-
-    maxInstances: 1,
   },
 };

@@ -33,9 +33,7 @@ export const config: WebdriverIO.Config = {
 
   logLevel: 'debug',
 
-  waitforTimeout: 90000,
-
-  connectionRetryTimeout: 120000,
+  waitforTimeout: 1000,
 
   connectionRetryCount: 3,
 
@@ -56,8 +54,7 @@ export const config: WebdriverIO.Config = {
   ],
 
   mochaOpts: {
-    ui: 'bdd',
-    timeout: 3 * 60 * 1000,
+    ui: 'bdd'
   },
 
   async onPrepare() {
