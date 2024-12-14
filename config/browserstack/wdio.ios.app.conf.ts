@@ -14,7 +14,6 @@ export const config = {
           projectName: process.env.BUILD_NAME + ' iOS App',
           buildName: 'Suite: ' + process.env.BUILD_TAGS,
           idleTimeout: 180,
-          resignApp: false
         },
       },
     ],
